@@ -1,0 +1,335 @@
+/* Custom CSS - IRON CORE */
+
+:root {
+    --neon-green: #39ff14;
+    --neon-green-hover: #32e612;
+    --dark-1: #0a0a0a;
+    --dark-2: #121212;
+    --dark-3: #1a1a1a;
+    --gray: #888888;
+    --white: #ffffff;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--dark-1);
+    color: var(--white);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Utilities */
+.text-neon { color: var(--neon-green) !important; }
+.bg-neon { background-color: var(--neon-green) !important; }
+.section-padding { padding: 100px 0; }
+.bg-dark-1 { background-color: var(--dark-1); }
+.bg-dark-2 { background-color: var(--dark-2); }
+.bg-dark-3 { background-color: var(--dark-3); }
+
+/* Buttons */
+.btn-neon {
+    background-color: var(--neon-green);
+    color: var(--dark-1);
+    border: 2px solid var(--neon-green);
+    font-weight: 700;
+    transition: var(--transition);
+    padding: 10px 25px;
+    border-radius: 0;
+}
+
+.btn-neon:hover {
+    background-color: transparent;
+    color: var(--neon-green);
+}
+
+.btn-outline-neon {
+    background-color: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    font-weight: 700;
+    transition: var(--transition);
+    padding: 10px 25px;
+}
+
+.btn-outline-neon:hover {
+    background-color: var(--neon-green);
+    color: var(--dark-1);
+}
+
+.btn-link-neon {
+    color: var(--neon-green);
+    transition: var(--transition);
+}
+
+.btn-link-neon:hover {
+    color: var(--white);
+    padding-left: 5px;
+}
+
+/* Navbar */
+#mainNavbar {
+    transition: var(--transition);
+    padding: 20px 0;
+}
+
+#mainNavbar.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    border-bottom: 2px solid var(--neon-green);
+}
+
+.navbar-brand {
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin: 0 10px;
+    color: var(--white) !important;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--neon-green) !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('../assets/images/hero-bg.png') center/cover no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* Service Card */
+.service-card {
+    background-color: var(--dark-2);
+    border: 1px solid var(--dark-3);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-green);
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(57, 255, 20, 0.1), transparent);
+    transition: var(--transition);
+}
+
+.service-card:hover::after {
+    bottom: 0;
+}
+
+/* Trainer Card */
+.trainer-card {
+    background-color: var(--dark-1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.trainer-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.trainer-img img {
+    transition: var(--transition);
+}
+
+.trainer-card:hover .trainer-img img {
+    transform: scale(1.1);
+}
+
+.trainer-social {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(57, 255, 20, 0.9);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    transition: var(--transition);
+}
+
+.trainer-card:hover .trainer-social {
+    bottom: 0;
+}
+
+.trainer-social a {
+    color: var(--dark-1);
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+/* Pricing Card */
+.pricing-card {
+    background-color: var(--dark-2);
+    border: 2px solid var(--dark-3);
+    transition: var(--transition);
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: var(--neon-green);
+    transform: scale(1.03);
+}
+
+.pricing-card.featured {
+    border-color: var(--neon-green);
+    background-color: var(--dark-3);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background-color: var(--neon-green);
+    color: var(--dark-1);
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* Gallery */
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(57, 255, 20, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-img {
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+/* Experience Badge */
+.experience-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    padding: 20px 40px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Contact Form */
+.form-control {
+    background-color: var(--dark-3);
+    border: 1px solid var(--dark-3);
+    color: var(--white);
+    padding: 12px 20px;
+}
+
+.form-control:focus {
+    background-color: var(--dark-3);
+    border-color: var(--neon-green);
+    color: var(--white);
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: var(--white);
+    opacity: 0.8; /* Slightly reduced opacity for better UX while remaining "white" */
+}
+
+.footer-btn {
+    border-radius: 0;
+}
+
+/* Back to Top */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    display: none;
+    transition: var(--transition);
+}
+
+#backToTop.show {
+    display: block;
+}
+
+/* Carousel Indicators */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .section-padding { padding: 60px 0; }
+    .hero { height: auto; padding: 150px 0 100px; }
+    .experience-badge { position: relative; bottom: 0; right: 0; margin-top: 20px; }
+}
+
+@media (max-width: 767px) {
+    .display-1 { font-size: 3.5rem; }
+}
